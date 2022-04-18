@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Models\Cliente;
+use App\Http\Controllers\ClienteController;
+use Illuminate\Models\Paquete;
+use App\Http\Controllers\PaqueteController;
+
 
 
 /*
@@ -19,3 +23,9 @@ use Illuminate\Models\Cliente;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('cliente',ClienteController::class);
+//Route::apiResource('cliente/{id}',ClienteController::class);
+Route::apiResource('paquetes',PaqueteController::class);
+Route::apiResource('paquetes/cliente/',PaqueteController::class);
+

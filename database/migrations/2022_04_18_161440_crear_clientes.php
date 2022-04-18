@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombre',60);
             $table->string('apellido',60);
             $table->string('cedula',10);
-            $table->string('telefono',10);
+            $table->string('telefono',20);
             $table->string('direccion',120);
             $table->timestamps();
         });

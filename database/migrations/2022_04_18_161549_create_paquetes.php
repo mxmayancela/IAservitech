@@ -20,7 +20,10 @@ return new class extends Migration
             $table->boolean('confirmed')->nullable()->default(false);
             $table->enum('tipo', ['normal', 'express']);
             $table->string('destinatario', 100);
+            $table->unsignedBigInteger('cliente_id');
             $table->timestamps();
+
+            $table->foreign('cliente_id')->references('id')->on('clientes');
         });
     }
 
