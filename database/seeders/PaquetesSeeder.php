@@ -15,6 +15,17 @@ class PaquetesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker=Faker::create();
+        for($i=0; $i < 40; $i++){
+            \DB::table('paquetes')->insert(array(
+                'origen' => $faker->randomElement(['Quito','Cuenca', 'Macas', 'Guayaquil']),
+                'destino'=> $faker->randomElement(['Quito','Cuenca', 'Macas', 'Guayaquil']),
+                'confirmed'=> $faker->boolean(),
+                'tipo'=>$faker->randomElement(['Express','Normal']), 
+                'destinatario'=>$faker->streetAddress,
+                'created_at' => date('Y-m-d H:m:s'),
+                'updated_at' => date('Y-m-d H:m:s')
+         ));
+        }
     }
 }
