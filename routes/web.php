@@ -21,5 +21,6 @@ Route::get('/', function () {
 
 
 Auth::routes();
-
+Route::resource('paquetes', App\Http\Controllers\PaqueteController::class);
+Route::resource('clientes', App\Http\Controllers\ClienteController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -24,8 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('cliente',ClienteController::class);
+Route::apiResource('clientes',ClienteController::class);
 //Route::apiResource('cliente/{id}',ClienteController::class);
 Route::apiResource('paquetes',PaqueteController::class);
-Route::apiResource('paquetes/cliente/',PaqueteController::class);
+
 
