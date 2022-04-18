@@ -6,8 +6,12 @@
 
 @section('content')
     <div class="container-fluid">
-    </div class="btn-group">
+    <form action="{{route('paquetes.index')}}" method="GET">
+    <div class="btn-group">
+        <input type="text" name="busqueda" class="form-control" placeholder="Ingrese direccion">
+        <input type="submit" name="" class="btn btn-primary">
     </div>
+    <form>
         <div class="row">
             <div class="col-sm-12">
                 
@@ -66,10 +70,8 @@
                                             <td>
                                                 <form action="{{ route('paquetes.destroy',$paquete->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('paquetes.show',$paquete->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('paquetes.edit',$paquete->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    
+                                                    
                                                 </form>
                                             </td>
                                         </tr>

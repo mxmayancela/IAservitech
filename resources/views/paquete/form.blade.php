@@ -17,17 +17,17 @@
         </div>
         <div class="form-group">
             {{ Form::label('Estado') }}
-            {{ Form::text('confirmed', $paquete->confirmed, ['class' => 'form-control' . ($errors->has('confirmed') ? ' is-invalid' : ''), 'placeholder' => 'Confirmed']) }}
+            {{ Form::text('confirmed', $paquete->confirmed, ['class' => 'form-control' . ($errors->has('confirmed') ? ' is-invalid' : ''), 'placeholder' => '0 o 1']) }}
             {!! $errors->first('confirmed', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('tipo') }}
-            {{ Form::text('tipo', $paquete->tipo, ['class' => 'form-control' . ($errors->has('tipo') ? ' is-invalid' : ''), 'placeholder' => 'Tipo']) }}
+            {{ Form::text('tipo', $paquete->tipo, ['class' => 'form-control' . ($errors->has('tipo') ? ' is-invalid' : ''), 'placeholder' => 'Express o Normal']) }}
             {!! $errors->first('tipo', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('destinatario') }}
-            {{ Form::text('destinatario', $paquete->destinatario, ['class' => 'form-control' . ($errors->has('destinatario') ? ' is-invalid' : ''), 'placeholder' => 'Destinatario']) }}
+            {{ Form::text('destinatario', $paquete->destinatario, ['class' => 'form-control' . ($errors->has('destinatario') ? ' is-invalid' : ''), 'placeholder' => 'Direccion de envio']) }}
             {!! $errors->first('destinatario', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         

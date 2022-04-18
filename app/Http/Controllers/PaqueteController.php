@@ -17,9 +17,11 @@ class PaqueteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $paquetes = Paquete::paginate();
+        $busqueda=$request->busqueda;
+        $paquetes = Paquete::where('destinatario','LIKE','%'.$busqueda.'%')
+        ->latest('id')->paginate();
 
         return view('paquete.index', compact('paquetes'))
             ->with('i', (request()->input('page', 1) - 1) * $paquetes->perPage());
@@ -32,6 +34,7 @@ class PaqueteController extends Controller
      */
     public function create()
     {
+        
         $paquete = new Paquete();
         $clientes=Cliente::pluck('nombre','id');
         return view('paquete.create', compact('paquete','clientes'));
