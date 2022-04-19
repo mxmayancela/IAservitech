@@ -11,6 +11,12 @@
         <input type="text" name="busqueda" class="form-control" placeholder="Ingrese direccion">
         <input type="submit" name="" class="btn btn-primary">
     </div>
+    <div class="btn-group">
+      <input type='date'  name="busqueda"   class="form-control"/>
+      <input type="submit" name="" class="btn btn-primary">
+    </div>
+       
+    </div>
     <form>
         <div class="row">
             <div class="col-sm-12">
@@ -51,6 +57,8 @@
 										<th>Tipo</th>
 										<th>Destinatario</th>
 										<th>Cliente Id</th>
+                                        <th>Fecha de Envio</th>
+
 
                                         <th></th>
                                     </tr>
@@ -66,6 +74,7 @@
 											<td>{{ $paquete->tipo }}</td>
 											<td>{{ $paquete->destinatario }}</td>
 											<td>{{ $paquete->cliente_id }}</td>
+                                            <td>{{ $paquete->created_at }}</td>
 
                                             <td>
                                                 <form action="{{ route('paquetes.destroy',$paquete->id) }}" method="POST">

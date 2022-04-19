@@ -19,8 +19,11 @@ class PaqueteController extends Controller
      */
     public function index(Request $request)
     {
+        $fecha=date('Y-m-d');
+        
         $busqueda=$request->busqueda;
         $paquetes = Paquete::where('destinatario','LIKE','%'.$busqueda.'%')
+        ->orwhere('created_at',[$fecha])
         ->latest('id')->paginate();
 
         return view('paquete.index', compact('paquetes'))
